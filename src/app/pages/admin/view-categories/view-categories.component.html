@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-list>
+
+        <div mat-subheader>All Categories</div>
+        <mat-list-item *ngFor="let item of categories">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{item.title}}</div>
+            <div mat-line>{{item.description}}</div>
+            <button routerLink="/admin-dashboard/add-reference/{{item.cid}}" mat-flat-button color="primary"> add reference </button>
+            <button mat-flat-button (click)="openDialog()" color="warn"> View reference</button>
+
+
+        </mat-list-item>
+        <div class="container text-center mt20">
+            <button routerLink="/admin-dashboard/add-category" mat-flat-button color="primary"> add New categorie</button>
+        </div>
+    </mat-list>
+
+
+
+</mat-card>

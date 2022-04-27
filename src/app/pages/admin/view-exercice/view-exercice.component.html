@@ -1,0 +1,34 @@
+<mat-card class="mt10 ml20"  *ngFor="let item of exercices">
+ <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
+     <mat-card-title>{{item.title}}</mat-card-title>
+     <mat-card-subtitle>{{item.category.title}}</mat-card-subtitle>
+ </mat-card-header> 
+ <mat-card-content>
+
+    <p>{{item.description}}</p>
+ </mat-card-content> 
+ <mat-card-actions>
+<button [routerLink]="'/admin-dashboard/view-questions/'+item.qId+'/'+item.title" mat-flat-button color="primary">Questions</button>
+<button mat-stroked-button color="primary" class="ml20">Max Marks : {{item.maxMarks}}</button>
+<button mat-stroked-button color="primary" class="ml20">Exercices : {{item.numberOfQuestions}}</button>
+<button [routerLink]="'/admin-dashboard/exercice/'+item.qId" mat-flat-button color="primary" class="ml20">Update</button>
+<button mat-stroked-button color="primary" class="ml20">Score</button>
+
+
+
+
+
+ </mat-card-actions> 
+ 
+
+
+</mat-card>
+<div class="container text-center mt40">
+   <button routerLink="/admin-dashboard/add-exercices" color="primary" mat-fab aria-label="Example icon-button with a heart icon">
+      <mat-icon>add</mat-icon>
+    </button>
+
+
+ </div>

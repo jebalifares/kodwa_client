@@ -1,0 +1,18 @@
+
+<mat-toolbar>
+    <a href="javascript:void(0)" routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon style="color: white;">book</mat-icon>
+    </a>
+    <span style="color: white;">Kodwa</span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!checkIsLogin()" href="javascript:void(0)" routerLink="/sginin" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon style="color: white;">login</mat-icon>
+    </a>
+    <a *ngIf="!checkIsLogin()" href="javascript:void(0)" routerLink="/sginup" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon style="color: white;">how_to_reg</mat-icon>
+    </a>
+    <a *ngIf="checkIsLogin()" (click)="logOut()" href="javascript:void(0)"  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon style="color: white;">logout</mat-icon>
+    </a>
+    <p>{{username}}</p>
+</mat-toolbar>
