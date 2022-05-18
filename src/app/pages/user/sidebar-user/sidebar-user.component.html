@@ -6,8 +6,8 @@
         <p class="description"></p>
         <mat-divider></mat-divider>
         <br>
-        <button style="color: white;" mat-list-item routerLink="/user-dashboard/" ><mat-icon mat-list-icon style="color: white;">home</mat-icon>Exercice</button>
-        <button style="color: white;"mat-list-item routerLink="'/user-dashboard/'+item.cid" *ngFor="let item of categories" ><mat-icon mat-list-icon style="color: white;" >account_circle</mat-icon> {{item.title}}</button>
+        <button style="color: white;" mat-list-item [routerLink]="'/user-dashboard/0'" ><mat-icon mat-list-icon style="color: white;">home</mat-icon>Home</button>
+        <button style="color: white;" mat-list-item [routerLink]="'/user-dashboard/'+item.cid" *ngFor="let item of categories" ><mat-icon mat-list-icon style="color: white;" >account_circle</mat-icon> {{item.title}}</button>
 
 
 

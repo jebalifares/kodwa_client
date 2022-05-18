@@ -10,7 +10,10 @@ import Swal  from 'sweetalert2';
 })
 export class StartComponent implements OnInit {
   
-  choix:String="";
+  note:number[]=[1,2,3,4,5];
+  step1Answer:number=0; 
+  step2Answer:number=0;
+  step3Answer:number=0;
   qid;
   questions:any;
   marksGot=0;
@@ -31,7 +34,7 @@ timer:any
     this.questions=data;
     this.timer=this.questions.length *2 *60;
     this.questions.forEach((q) => {
-     q["givenAnswer"] ='';
+     q['givenAnswer'] ='';
      console.log(q.givenAnswer)
     });
     },(error)=>{

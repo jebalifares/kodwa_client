@@ -10,16 +10,27 @@ import Swal  from 'sweetalert2';
 })
 export class LoadQuizComponent implements OnInit {
   quizess;
-catId;
+  catId;
   constructor(private _route:ActivatedRoute, private _quiz:ExerciceService) { }
 
   ngOnInit(): void {
-    this.catId=this._route.snapshot.params.catId;
+    this._route.params.subscribe((params)=>{
+      this.catId=this._route.snapshot.params.catId;
+    })
+    
+  
+  
     this._quiz.exercices().subscribe((data)=>{
 this.quizess=data;
     },(error)=>{
       Swal.fire("error","error in loading data","error")
+    });
+  
+  
+    this._quiz.QuizByCategory(this.catId).subscribe((data)=>{
+      this.quizess=data;
     })
-  }
 
-}
+  
+
+  }}

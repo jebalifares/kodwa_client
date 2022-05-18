@@ -15,6 +15,11 @@ export class CategoryService {
     public addcategory(category:any){
       return this._http.post(`${environment.baseUrl}/category/`,category)
     }
+    //add reference 
+    public addReference(reference:any){
+      return this._http.post(`${environment.baseUrl}/reference/`,reference)
+
+    }
    }
   
 

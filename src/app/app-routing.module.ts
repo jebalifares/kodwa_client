@@ -26,7 +26,9 @@ const routes: Routes = [
   {path:'sginin',component:SigninComponent},
   {path:'start/:qid', component:StartComponent},
   {path:'user-dashboard',component:UserDashboardComponent,children:[
+    {path:':cid',component:LoadQuizComponent},
     {path:'',component:LoadQuizComponent},
+    {path:':0',component:LoadQuizComponent},
     {path:'instructions/:qid', component:InstructionsComponent},
     
   ]},

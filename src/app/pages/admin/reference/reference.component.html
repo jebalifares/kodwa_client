@@ -1,34 +1,40 @@
 <mat-card>
     <mat-card-title>Référence de competence</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-subtitle>add reference</mat-card-subtitle>
     <mat-card-content>
       <div class="bootstrap-wrapper">
           <div class="row">
-              <div class="col-md-6 offset-md-3">
-    
+          <div class="col-md-6 offset-md-3">
+  <form class="mt20"  (ngSubmit)="formSubmit()"> 
     <mat-form-field class="w100" appearance="outline">
-        <mat-label>Le Savoir faire</mat-label>
-        <textarea class="text-center" rows="12" matInput></textarea>
-      </mat-form-field>
-      <mat-divider></mat-divider>
-      <br/>
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Le Savoir etre</mat-label>
-        <textarea rows="12" matInput></textarea>
-      </mat-form-field>
-      <mat-divider></mat-divider>
-      <br/>
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Le Savoir faire</mat-label>
-        <textarea rows="12" matInput></textarea>
-      </mat-form-field>
-      <div class="container text-center mt15">
-        <button mat-raised-button color="primary">Submit</button>
+      <mat-label>Le Savoir faire</mat-label>
+      <textarea name="savoir_etre" [(ngModel)]="reference.savoir_etre" class="text-center" rows="12" matInput></textarea>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br/>
+    <mat-form-field class="w100" appearance="outline">
+      <mat-label>Le Savoir faire</mat-label>
+      <textarea  name="savoir_faire" [(ngModel)]="reference.savoir_faire" rows="12" matInput></textarea>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br/>
+    <mat-form-field class="w100" appearance="outline">
+      <mat-label>Le Savoir faire</mat-label>
+      <textarea  name="savoir_todo" [(ngModel)]="reference.savoir_todo" rows="12" matInput></textarea>
+    </mat-form-field>
+    <div class="container text-center mt15">
+      <button mat-raised-button  color="primary">Submit</button>
 
-
+</div>
+</form>
+  </div>
     </div>
+    
+  
+    
       </div>
-      </div>
-      </div>
+      
+      
+    
       </mat-card-content>
   </mat-card>

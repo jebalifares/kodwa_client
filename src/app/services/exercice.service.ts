@@ -22,4 +22,10 @@ export class ExerciceService {
   public addQuiz(quiz){
     return this._http.post(`${environment.baseUrl}/quiz/`,quiz);
   }
+  // get quizz by category
+  public QuizByCategory (cid){
+    return this._http.get(`${environment.baseUrl}/quiz/category/${cid}`)
+
+  }
+
 }

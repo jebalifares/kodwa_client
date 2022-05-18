@@ -48,8 +48,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import{MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
-NgxUiLoaderHttpModule
-
+import {MatStepperModule}  from '@angular/material/stepper';
 
 
 @NgModule({
@@ -105,7 +104,7 @@ NgxUiLoaderHttpModule
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
     }),
-
+    MatStepperModule
     
   ],
   providers: [authInterceptorProviders],
