@@ -2,6 +2,7 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,25 +11,28 @@ import Swal from 'sweetalert2'
 })
 export class SignupComponent implements OnInit {
   public user={
-    firstName:'',
-    lastName:'',
-    username:'',
-    email:'',
-    password:'',
-    phone:''
+
+    userName:'',
+    userFirstName:'',
+    userLastName:'',
+    userPassword:'',
+    
   }
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   constructor(private _userService:UserService,
-              private _snackBar: MatSnackBar) { }
+              private _snackBar: MatSnackBar,private _router:Router) { }
 
   ngOnInit(): void {
   }
 
   public  clear(){
-    this.user.username=''
+    this.user.userName='',
+    this.user.userFirstName='',
+    this.user.userLastName='',
+    this.user.userPassword=''
 
 
 
@@ -36,7 +40,7 @@ export class SignupComponent implements OnInit {
   }
 
   public onRegister(){
-    if(this.user.firstName==''|| this.user.firstName==null){
+    if(this.user.userFirstName==''|| this.user.userFirstName==null){
       this.openSnackBar("First name is required.","OK");
       return;
     }
@@ -48,6 +52,8 @@ export class SignupComponent implements OnInit {
           'a new user saved successfully',
           'success'
         );
+        this._router.navigateByUrl("/sginin");
+
       }
       ,
       (error)=>{

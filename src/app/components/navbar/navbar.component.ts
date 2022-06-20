@@ -8,33 +8,28 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isLoggedIn:boolean=false;
-  username:string='';
-  constructor(private _authenticationService:AuthenticationService,private _router:Router) { }
-
+  
+  constructor(public _authenticationService:AuthenticationService,private _router:Router) { }
   ngOnInit(): void {
-    this._authenticationService.loginSubject.asObservable().subscribe(
-      (data)=>{
-        this.getCurrentUserName();
-      }
-    )
+    this.getusername();
+
+    
   }
+  username:any=    this._authenticationService.getRoleName();
+;
 
   checkIsLogin(){
     return this._authenticationService.isLoggedIn();
   }
-
-  logOut(){
-   this._authenticationService.logout();
-   this._authenticationService.loginSubject.next(false);
-   this._router.navigateByUrl('/sginin');
+  logout(){
+    this._authenticationService.clear();
+    this._router.navigateByUrl('/sginin');
+  }
+  getusername(){
+    return this.username=this._authenticationService.getRoleName();
   }
 
-  getCurrentUserName(){
-    this.isLoggedIn=this._authenticationService.isLoggedIn();
-    if(this.isLoggedIn){
-      this.username=this._authenticationService.getUser()?.username;
-    }
-  }
+ 
 
+  
 }

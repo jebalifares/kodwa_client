@@ -7,12 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
- public user:any=null;
+ public user={
+  "userName":'',
+  "userFirstName":'',
+  "userLastName":'',
+  "userPassword":'',
+  "role":[
+    {
+    "roleName":'',
+    "roleDescription":''
+    }
+  ]
+  
+ };
   constructor(private _authenticationService :AuthenticationService) { }
 
   ngOnInit(): void {
-    this.user=this._authenticationService.getUser();
-    console.log(this.user.username);
+   this.user= localStorage.user;
+   console.log(this._authenticationService.getUser());
+   
+
+   
     
   }
 

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
   public loginData={
-    username:'',
-    password:''
+    userName:'',
+    userPassword:''
   };
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
@@ -24,14 +24,61 @@ export class SigninComponent implements OnInit {
   }
 
   onLogin(){
-    if(this.loginData.username.trim()=='' || this.loginData.password.trim() ==''){
-      this.openSnackBar("username & password is required.","OK");
+    if(this.loginData.userName.trim()=='' || this.loginData.userName==null){
+      this._snackBar.open("username  is required.","OK",{
+        duration:3000
+      });
+      return;
+      
+      
+    }
+    if(this.loginData.userPassword.trim()=='' || this.loginData.userPassword==null){
+      this._snackBar.open("password is required.","OK",{
+        duration:3000
+      });
       return;
     }
-
     this._authenticationService.generateToken(this.loginData).subscribe(
       (response:any)=>{
 
+        console.log(response.jwtToken);
+        console.log(response.user.role);
+               
+        this._authenticationService.setToken(response.jwtToken);
+          this._authenticationService.setRoles(response.user.role);
+
+          this._authenticationService.setRoleName(response.user.role[0].roleName);
+         this._authenticationService.SetUser(response.user);
+
+         this._authenticationService.getCurrentUser().subscribe((data)=>{
+           console.log(data);
+         })
+const role=response.user.role[0].roleName;
+this._authenticationService.SetUser(response.user);
+console.log(this._authenticationService.getUser())
+         
+
+        if(role=='Admin'){
+
+          this._router.navigateByUrl("/admin-dashboard");
+          this._authenticationService.setRoleName('Admin');
+
+        }
+        if(role=='User'){
+          this._router.navigateByUrl("/user-dashboard");
+        }          this._authenticationService.setRoleName('User');
+
+
+
+      },
+      (error)=>{
+console.log(error);
+      }
+      );
+    }
+  
+
+        /*}}
         this._authenticationService.loginUser(response.token);
         this._authenticationService.getCurrentUser().subscribe(
           (response)=>{
@@ -56,10 +103,11 @@ export class SigninComponent implements OnInit {
       duration:5000,
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-    });
-  }
+    });*/
+  
 
-}
+
 
 
  
+  }

@@ -5,14 +5,19 @@
     </a>
     <span style="color: white;">Kodwa</span>
     <span class="example-spacer"></span>
-    <a *ngIf="!checkIsLogin()" href="javascript:void(0)" routerLink="/sginin" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon style="color: white;">login</mat-icon>
+    <a *ngIf="! checkIsLogin()" class="feres" mat-raised-button color="accent"  routerLink="/sginin" >
+  <!-- <mat-icon style="color: white;">login</mat-icon>--> 
+ SignIn
     </a>
-    <a *ngIf="!checkIsLogin()" href="javascript:void(0)" routerLink="/sginup" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon style="color: white;">how_to_reg</mat-icon>
+    <a *ngIf="! checkIsLogin()" class="feres" mat-raised-button color="accent" routerLink="/sginup"   >
+SignUp
     </a>
-    <a *ngIf="checkIsLogin()" (click)="logOut()" href="javascript:void(0)"  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon style="color: white;">logout</mat-icon>
-    </a>
-    <p>{{username}}</p>
+    <button mat-raised-button  style="margin-right: 20px;" color="accent" *ngIf="checkIsLogin()" (click)="logout()" >
+        <b style="color: white;">logout</b>
+    </button>  
+    <b *ngIf="_authenticationService" style="color: white;">Admin</b>
+    <b *ngIf="getusername()=='User'&& checkIsLogin()" style="color: white;">User</b>      
+      
+    
+
 </mat-toolbar>

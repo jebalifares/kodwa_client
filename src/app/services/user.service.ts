@@ -9,6 +9,6 @@ export class UserService {
   constructor(private _http:HttpClient) { }
 
   public saveUser(user:any){
-    return this._http.post(`${environment.baseUrl}/user`,user);
+    return this._http.post(`${environment.baseUrl}/registerNewUser`,user);
   }
 }
