@@ -44,3 +44,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ml10{
     margin-left: 10px;
 }
+.save-dialog .mat-dialog-container {
+    border-radius: 1rem;
+    width: 500px;
+  }

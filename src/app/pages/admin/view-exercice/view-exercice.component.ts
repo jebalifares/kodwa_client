@@ -11,10 +11,22 @@ export class ViewExerciceComponent implements OnInit {
 
   exercices=[{
     qId:'',
-    title:'',
-    description:'',
-    maxMarks:'',
-    numberOfQuestions:'',
+    title:'Spring boot ',
+    description:'this is test for basic knowledge of Spring boot',
+    maxMarks:'20',
+    numberOfQuestions:'4',
+    active:'',
+    category:{
+      title:''
+    }
+  
+  
+  },{
+    qId:'',
+    title:'Angular ',
+    description:'this is test for basic knowledge of Angular',
+    maxMarks:'20',
+    numberOfQuestions:'4',
     active:'',
     category:{
       title:''

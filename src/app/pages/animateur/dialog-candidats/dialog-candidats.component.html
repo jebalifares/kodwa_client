@@ -1,0 +1,108 @@
+<div class="title">
+    <div class="screen">
+      <h1>
+        add Participent To:{{ data.name }}
+      </h1>
+    </div>
+    <mat-icon class="closebutton">close</mat-icon>
+  </div>
+  <div>
+    <div class="screen-add">
+      <img
+        width="300px"
+        height="200px"
+        style="border-radius: 10px;margin-top: 10px;"
+        src="	https://www.tactileo.com/wp-content/uploads/2016/12/eval-4.jpg
+  "
+      />
+      <form style="width: 100%" [formGroup]="CandidatForm">
+        <div class="row">
+          <div style="display: flex;flex-direction:column;" class="col">
+            <mat-label style="font-weight: 700">Participant Type</mat-label>
+
+              <select
+                placeholder="Role "
+                matInput
+                formControlName="role"
+                class="input-form"
+
+              >
+                <option
+                  *ngFor="let role of type"
+                  [ngValue]="role"
+                >
+                  <div style="display: flex; align-items: center; height: 100px">
+                    <img
+                      src="https://www.frandroid.com/wp-content/themes/humanoid-redesign/assets/images/2019-redesign/products/specs/definition.svg"
+                    />
+                    <b>{{ role }}</b>
+                  </div>
+                </option>
+              
+              </select>
+              </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 50%">
+              <input
+                matInput
+                placeholder="Email"
+                formControlName="email"
+              />
+              <mat-error
+                *ngIf="CandidatForm.controls['email'].hasError('required')"
+              >
+                Email <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 50%">
+              <input matInput placeholder=" Name...." formControlName="name" />
+              <mat-error *ngIf="CandidatForm.controls['name'].hasError('required')">
+                Name of Candidat<strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 50%">
+              <input matInput placeholder="+12627671952" formControlName="marque" />
+              <mat-error
+                *ngIf="CandidatForm.controls['numberPhone'].hasError('required')"
+              >
+                NumberPhone <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        
+  
+        
+ 
+        <mat-card-actions>
+          <button
+            [mat-dialog-close]="CandidatForm.value"
+            class="button"
+            mat-raised-button
+            color="primary"
+            type="submit"
+          >
+            add Participant
+          </button>
+          <button
+            class="buttoncancel"
+            mat-raised-button
+            color="warn"
+            type="submit"
+          >
+            Cancel
+          </button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </div>

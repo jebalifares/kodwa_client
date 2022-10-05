@@ -20,9 +20,12 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
+import { SessionCreateComponent } from './pages/animateur/session-create/session-create.component';
+import { SessionViewComponent } from './pages/animateur/session-view/session-view.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'sginup',component:SignupComponent},
+
   {path:'sginin',component:SigninComponent},
   {path:'start/:qid', component:StartComponent},
   {path:'user-dashboard',component:UserDashboardComponent,children:[
@@ -32,12 +35,17 @@ const routes: Routes = [
     {path:'instructions/:qid', component:InstructionsComponent},
     
   ]},
+  
   {path:'admin-dashboard',component:AdminDashboardComponent,children:[
     {path:'',component:WelcomeComponent},
     {path:'profile',component:ProfileComponent},
     {path:'categories',component:ViewCategoriesComponent},
     {path:'add-category',component:AddCategoryComponent},
     {path:'exercices',component:ViewExerciceComponent},
+    {path:'session',component:SessionViewComponent},
+  {path:'createsession',component:SessionCreateComponent},
+
+
     {path:'add-exercices',component:AddExerciceComponent},
     {path:'exercice/:qid',component:UpdateExerciceComponent},
     {path:'view-questions/:qid/:title',component:ViewExerciceQuestionComponent},

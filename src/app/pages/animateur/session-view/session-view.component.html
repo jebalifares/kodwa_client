@@ -1,0 +1,77 @@
+<div class="container">
+    <h1>
+      <b>Sessions</b>
+    </h1>
+    
+    <mat-form-field style="width: 700px; margin-left: 20px; border-radius: 1px" appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-label>search</mat-label>
+      <input [(ngModel)]="searchInput" matInput placeholder="Search...." />
+    </mat-form-field>
+    <div style="width: 200px"></div>
+    <div class="bouton">
+      <button class="buttoncreate" mat-raised-button [routerLink]="['create']" color="primary">
+        New Session
+      </button>
+    </div>
+  </div>
+  
+  <mat-divider></mat-divider>
+  
+  <div style="   display: flex;
+  gap: 5px;
+  font-weight: bold;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-left: 15px;
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  width: 30px;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 30px;
+  line-height: 1.5;
+  margin-bottom: 10px;" class="section-button-container">
+    All
+    <span>1</span>
+  </div>
+  <div style="margin-left: 50px">
+    <mat-divider></mat-divider>
+  </div>
+ 
+      <div class="card" *ngFor="let session of sessions ">
+        <div class="campaign-card">
+          <div class="campaign-card-imgBx">
+              <img style="border-radius: 1rem" src="https://www.vie-publique.fr/sites/default/files/styles/large_full/public/en_bref/image_principale/evaluation_politique_publique_Conseil_Etat_117324218_Drupal.jpg?itok=vEqoXeO5" />
+          </div>
+          <div class="campaign-card-content">
+              <div class="campaign-card-details">
+                  <h2>
+                      {{ session.name }}
+                      <br />
+                      <span class="campaign-card-metadata">{{ session.description }}</span>
+                  </h2>
+                  <div>
+                      <button class="buttoncreate" color="primary" mat-raised-button>
+                          Send Invitation
+                      </button>
+                      <button class="buttonDetails" color="accent" mat-raised-button>
+                          Details
+                      </button>
+                      <button (click)="openDialogCandidat(session)" class="buttonDetails" color="accent" mat-raised-button>
+                        add Candidat
+                    </button>
+                    <button class="buttonDetails" color="accent" mat-raised-button>
+                      add Evaluateur
+                  </button>
+                      <button (click)="DeleteDialogComponent(session)" class="buttoncancel" color="warn" mat-raised-button>
+                          Delete
+                      </button>
+          
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+   

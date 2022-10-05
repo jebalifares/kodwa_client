@@ -1,0 +1,53 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .card {
+    min-width: 120px;
+    margin: 20px auto;
+  }
+  
+  .mat-radio-button {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .row {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .col:last-child {
+    margin-right: 0;
+  }
+  .buttoncreate{
+    cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  display: inline-flex;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  color: white;
+  font-weight: bold;
+  padding: 0px 20px;
+  min-width: 100px;
+  white-space: nowrap;
+  border-radius: 8px;
+  height: 45px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(51, 112, 244);
+  
+  
+  }
+  mat-card-title{
+    font-size: 1.25em;
+    font-weight: 600;
+  }

@@ -1,0 +1,27 @@
+<h2 mat-dialog-title style="text-align: center">
+    <mat-icon style="color: rgb(228, 37, 37); text-align: center"
+      >error
+    </mat-icon>
+  </h2>
+  <mat-dialog-content>
+    <h2 style="font-weight: 550; margin-left: 20px" mat-dialog-title>
+      {{ data.message }}
+    </h2>
+  
+    <button
+      style="margin-left: 20px"
+      [mat-dialog-close]="true"
+      class="buttoncancel"
+      mat-raised-button
+    >
+      Confirm
+    </button>
+    <button
+      style="margin-left: 10px"
+      [mat-dialog-close]="false"
+      class="buttoncreate"
+      mat-raised-button
+    >
+      Cancel
+    </button>
+  </mat-dialog-content>

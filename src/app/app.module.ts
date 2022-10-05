@@ -12,7 +12,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatInputModule} from '@angular/material/input';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
@@ -38,7 +38,7 @@ import { ViewExerciceQuestionComponent } from './pages/admin/view-exercice-quest
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ReferenceComponent } from './pages/admin/reference/reference.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogClose, MatDialogModule} from '@angular/material/dialog';
 import { ViewReferenceComponent } from './pages/admin/view-reference/view-reference.component';
 import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
 import {} from '@angular/material/select';
@@ -49,7 +49,13 @@ import{MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import {MatStepperModule}  from '@angular/material/stepper';
+import { SessionCreateComponent } from './pages/animateur/session-create/session-create.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
+import {MatDividerModule} from '@angular/material/divider';
+import { SessionViewComponent } from './pages/animateur/session-view/session-view.component';
+import { DialogDeleteComponent } from './pages/animateur/dialog-delete/dialog-delete.component';
+import { DialogCandidatsComponent } from './pages/animateur/dialog-candidats/dialog-candidats.component';
 
 @NgModule({
   declarations: [
@@ -77,12 +83,18 @@ import {MatStepperModule}  from '@angular/material/stepper';
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
+    DialogCandidatsComponent,
+    SessionViewComponent,
+    SessionCreateComponent,
+    DialogDeleteComponent,
+    DialogCandidatsComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
@@ -96,9 +108,11 @@ import {MatStepperModule}  from '@angular/material/stepper';
     MatSidenavModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatDividerModule,
     CKEditorModule,
     MatDialogModule,
     MatRadioModule,
+    MatDatepickerModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
